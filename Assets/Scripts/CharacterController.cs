@@ -32,7 +32,8 @@ public class CharacterController : MonoBehaviour
 
         Vector3 heading = Vector3.Normalize(Vector3.Scale(rightMovement, upMovement));
 
-        transform.forward = heading;
+        if(heading != Vector3.zero)
+            transform.forward = heading;
         transform.position += rightMovement;
         transform.position += upMovement;
     }
